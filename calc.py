@@ -1,3 +1,5 @@
+import data
+
 units_dictionary = {}
 units_dictionary['length'] = ['inch', 'foot', 'meter', 'centimeter']
 units_dictionary['volume'] = ['liter', 'gallon', 'pint', 'quart', 'cup']
@@ -8,6 +10,7 @@ units_dictionary['data'] = ['MB', 'GB', 'KB', 'TB']
 units_dictionary['energy'] = ['joule', 'watt', 'BTU']
 # units_dictionary['gravity']
 
+# Choice[Category, From Unit, To Unit, Value]
 def ask_input():
     choice = []
 
@@ -16,10 +19,24 @@ def ask_input():
 
     choice.append(input("Enter your Category: "))
 
-    print("CHOICES: " + str(units_dictionary[choice[0]])[9:-1])
-    choice.append(input("Enter Unit Your Converting To: "))
+    print("CHOICES: " + str(units_dictionary[choice[0]]))
+    choice.append(input("Enter Unit your Converting to: "))
 
     choice.append(input(f"Converting from {choice[1]} to : "))
     choice.append(int(input(f"How many {choice[1]}: ")))
-    return choice
+    print(f"{calc(choice)} {choice[2]}")
+
+def calc(choice):
+    category = choice[0]
+    if category == "data":
+        return data.data(choice)
+    else:
+        print("ERROR")
+        return
+
+
+while(True):
+    ask_input()
+
+
 ask_input()
