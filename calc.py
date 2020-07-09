@@ -7,3 +7,10 @@ units_dictionary['mass'] = ['gram', 'pound', 'ounce']
 units_dictionary['data'] = ['MB', 'GB', 'KB', 'TB']
 units_dictionary['energy'] = ['joule', 'watt', 'BTU']
 # units_dictionary['gravity']
+
+def ask_input():
+    print("CHOICES: " + str(units_dictionary.keys())[10:-1])
+    print("--ENTER WITH NO QUOTES--")
+    choice = input("Enter your unit: ")
+
+ask_input()
