@@ -1,5 +1,6 @@
 import data
 import custom_time
+import volume
 
 units_dictionary = {}
 #units_dictionary['length'] = ['inch', 'foot', 'meter', 'centimeter']
@@ -33,6 +34,8 @@ def calc(choice):
         return data.data(choice)
     if category == "time":
         return custom_time.timecalc(choice)
+    if category == "volume":
+        return volume.volume(choice)
     else:
         print("ERROR")
         return
