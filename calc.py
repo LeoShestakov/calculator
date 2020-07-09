@@ -9,8 +9,17 @@ units_dictionary['energy'] = ['joule', 'watt', 'BTU']
 # units_dictionary['gravity']
 
 def ask_input():
+    choice = []
+
     print("CHOICES: " + str(units_dictionary.keys())[10:-1])
     print("--ENTER WITH NO QUOTES--")
-    choice = input("Enter your unit: ")
 
+    choice.append(input("Enter your Category: "))
+
+    print("CHOICES: " + str(units_dictionary[choice[0]])[9:-1])
+    choice.append(input("Enter Unit Your Converting To: "))
+
+    choice.append(input(f"Converting from {choice[1]} to : "))
+    choice.append(int(input(f"How many {choice[1]}: ")))
+    return choice
 ask_input()
